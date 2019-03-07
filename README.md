@@ -2,8 +2,9 @@
 Code library for competitive programming from Kattis, checkio and hackerrank
 
 
-# Send a request with
-link to task:
+# Send a request with the following information as issue.
+Link to task (Kattis, checkio and hackerrank):
+
 Language (Python, java, c++):
 
 
