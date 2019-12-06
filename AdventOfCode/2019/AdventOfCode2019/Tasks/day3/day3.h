@@ -13,6 +13,7 @@ struct Ele_info{
 struct Point{
   int32_t x = 0;
   int32_t y = 0;
+  int32_t distance = 0;
 
   friend std::ostream & operator << ( std::ostream &os, const Point &po){
     os << "x: " << po.x << " y: " << po.y;
