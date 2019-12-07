@@ -37,11 +37,11 @@ struct Line {
 class day3{
 public:
   day3();
-  void task1();
-  void task2();
+  void task1_and_2();
   void find_junctions();
   void check_junctions(Line l1, Line l2);
   void update_manhatan_distance_junction(int32_t& junc_x, int32_t& junc_y);
+  void update_fewest_combined_steps(int32_t& junc_x, int32_t& junc_y, bool vertical_junction, Line l1, Line l2);
 
 private:
   std::vector<std::string> wire1;
@@ -50,6 +50,7 @@ private:
   std::vector<Line> wire1_lines;
   std::vector<Line> wire2_lines;
 
+  std::uint32_t fewest_combined_steps = 999999999;
   std::uint32_t manhatan_distance_junction = 999999999;
 };
 
