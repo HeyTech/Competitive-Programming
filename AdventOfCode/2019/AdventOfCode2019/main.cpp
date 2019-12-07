@@ -2,6 +2,8 @@
 #include "Tasks/day1/day1.h"
 #include "Tasks/day2/day2.h"
 #include "Tasks/day3/day3.h"
+#include "Tasks/day4/day4.h"
+
 
 #define end2l "\n\n"
 
@@ -17,10 +19,15 @@ int main(){
   //  d2.task1();
   //  d2.task2();
 
-      day3 d3;
-      d3.task1();
+  day3 d3;
+  d3.task1();
   //    d3.task2();
 
+
+  //  day4 d4;
+  //  d4.task1();
+  //  d4.task1_algorithms();
+  //  d4.task2();
 
   std::cout << "\nEnd of World!" << std::endl;
   return 0;
