@@ -1,41 +1,46 @@
-#include <iostream>
-#include <vector>
+#pragma once
+
+#include "../common/common.h"
 #include <algorithm>
+#include <vector>
 
+template <typename T> class Day1 {
+public:
+  Day1() = delete;
+  explicit Day1(std::vector<T> const inputs) : in_{inputs} {};
 
-class Day1 {
- public:
-  void task1();
-};
-
-void Day1::task1(){
-  std::cout << "welcome to day 1 task 1" << std::endl;
-  std::ios_base::sync_with_stdio(false);
-  std::cin.tie();
-
-  std::uint32_t ints = 0;
-  std::vector<std::uint32_t> inputs;
-
-  while(std::cin >> ints){
-    inputs.push_back(static_cast<size_t>(ints));
-  }
-  std::sort(inputs.begin(), inputs.end());
-  for (auto i: inputs)
-    std::cout << i << std::endl;
-
-
-  for( auto i : inputs) {
-    for (auto j : inputs) {
-      for (auto k: inputs) {
-        std::size_t const sum{i +j +k};
+  void task1() {
+    FUNCTIONCALL
+    for (std::size_t i = 0; i < in_.size(); ++i) {
+      for (std::size_t k = i + 1; k < in_.size(); ++k) {
+        std::size_t const sum{in_[i] + in_[k]};
         if (sum == 2020) {
-          std::cout << "yeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaooooooooooooooooooooooo " << i*j*k << "  " << sum
-                    << std::endl;
+          std::size_t const prod{in_[i] * in_[k]};
+          ANSWER1(prod)
+          break;
         }
       }
     }
   }
 
-}
+  void task2() {
+    FUNCTIONCALL
+    // Could be optimized
+    for (std::size_t i = 0; i < in_.size(); ++i) {
+      for (std::size_t j = i + 1; j < in_.size(); ++j) {
+        for (std::size_t k = j + 1; k < in_.size(); ++k) {
+          std::size_t const sum{in_[i] + in_[j] + in_[k]};
+          if (sum == 2020) {
+            std::size_t const prod{in_[i] * in_[j] * in_[k]};
+            ANSWER2(prod)
+            break;
+          }
+        }
+      }
+    }
+    NOANSWERFOUND
+  }
 
-
+private:
+  std::vector<T> in_;
+};
