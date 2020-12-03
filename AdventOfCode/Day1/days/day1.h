@@ -6,7 +6,6 @@
 
 template <typename T> class Day1 {
 public:
-  Day1() = delete;
   explicit Day1(std::vector<T> const inputs) : in_{inputs} {};
 
   void task1() {

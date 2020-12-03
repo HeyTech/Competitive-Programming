@@ -1,7 +1,11 @@
 #pragma once
 
-#include <iostream>
+#include <algorithm>
+#include <cstdint>
 #include <functional>
+#include <iostream>
+#include <string>
+#include <vector>
 
 namespace common {
 // define logging and commands
