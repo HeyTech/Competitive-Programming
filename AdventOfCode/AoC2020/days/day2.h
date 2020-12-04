@@ -1,18 +1,20 @@
 #pragma once
-#include "../common/common.h"
+#include "../aoc/aoc.h"
 #include <ostream>
 #include <regex>
 
-struct Match {
-  int lowest;
-  int highest;
-  std::string characher;
-  std::string password;
+namespace {
+  struct Match {
+    int lowest;
+    int highest;
+    std::string characher;
+    std::string password;
 
-  friend std::ostream &operator<<(std::ostream &s, const Match &match) {
-    return s << match.lowest << " " << match.highest << " " << match.characher
-             << " " << match.password;
-  }
+    friend std::ostream &operator<<(std::ostream &s, const Match &match) {
+      return s << match.lowest << " " << match.highest << " " << match.characher
+               << " " << match.password;
+    }
+  };
 };
 
 template <typename T> class Day2 {
@@ -49,7 +51,7 @@ public:
         char const char_higher{match.password.at(match.highest)};
         bool const cond_one{match.characher.at(0) == char_lower};
         bool const cond_two{match.characher.at(0) == char_higher};
-        if ((cond_one | cond_two) && !(cond_one && cond_two) ) {
+        if ((cond_one | cond_two) && !(cond_one && cond_two)) {
           counter++;
         }
       }

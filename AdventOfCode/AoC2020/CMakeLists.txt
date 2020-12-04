@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 20)
 file(GLOB_RECURSE TASKS days/ *.h)
 
 SET(COMMON
-        common/common.h)
+        aoc/aoc.h)
 
 add_executable(AoC2020
         main.cpp

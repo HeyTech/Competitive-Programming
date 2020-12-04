@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../common/common.h"
+#include "../aoc/aoc.h"
 #include <algorithm>
 #include <vector>
 
