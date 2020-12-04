@@ -16,13 +16,12 @@ int main() {
   std::string line;
   std::vector<std::string> inputs;
 
-  while (std::cin >> line) {
+  while (std::getline(std::cin, line)) {
     inputs.push_back(line);
   }
-
   Day2<std::string> day(inputs);
-  day.task1();
-  day.task2();
+   day.task1();
+   day.task2();
 
   return 0;
 }
