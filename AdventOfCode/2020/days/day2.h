@@ -43,7 +43,7 @@ public:
     for (const std::string &pass : in_) {
       std::smatch m;
       std::regex_match(pass, m, re);
-      // Fixing the index
+      // Fixing the index, reset it to index zero
       Match match{std::stoi(m[0]) - 1, std::stoi(m[2]) - 1, m[3], m[4]};
       if ((match.password.size() > match.lowest) &&
           (match.password.size() > match.highest)) {
