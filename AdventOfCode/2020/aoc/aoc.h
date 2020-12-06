@@ -19,10 +19,4 @@ namespace macro {
 // clang-format on
 } // namespace macro
 
-auto inline repeat_string(std::string const &input, std::string &output,
-                          std::size_t num) {
-  for (int i = 0; i < num; ++i) {
-    output.append(input);
-  }
-}
 } // namespace aoc

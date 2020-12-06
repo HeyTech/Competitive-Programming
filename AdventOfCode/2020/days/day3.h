@@ -1,5 +1,6 @@
 #pragma once
 #include "../aoc/aoc.h"
+#include "../aoc/aoc_string.h"
 #include <cmath>
 
 template <typename T> class Day3 {
@@ -16,7 +17,7 @@ public:
       std::size_t rep_times{static_cast<std::size_t>(std::floor(x / width_))};
       { // to release all stored strings...
         std::string new_width{in_[y]};
-        aoc::repeat_string(in_[y], new_width, rep_times);
+        aoc::string::repeat_string(in_[y], new_width, rep_times);
 
         if (new_width.at(x) == '#') {
           trees++;

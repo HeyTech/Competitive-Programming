@@ -3,31 +3,31 @@
 
 template <typename T> class Day4 {
 public:
-  explicit Day4(std::vector<T> const &inputs) : in_{inputs} {
-    std::string pass{};
-    for (auto const &line : in_) {
-      if (line != "") { // empty line, new pass will soon come..
-        pass.append(line + " ");
-      } else {
-        passports_.push_back(pass);
-        pass = "";
-      }
-    }
-  };
+  explicit Day4(std::vector<T> const &inputs) : passports_{inputs} {};
 
   auto task1() -> void {
     FUNCTIONCALL
+    std::size_t valid_pass{0};
     for (auto const &p : passports_) {
-      std::cout << p << std::endl;
-      auto var = std::find(p.begin(), p.end(), ' ');
-      if ()
+      auto conf = std::count(p.begin(), p.end(), ':');
+      if (conf == 8) {
+        valid_pass++;
 
+      } else if (conf == 7) {
+        auto cid{p.find("cid:")};
+        if (cid == std::string::npos) {
+          valid_pass++;
+        }
+      }
     }
+    ANSWER1(valid_pass)
   }
 
-  auto task2() -> void { FUNCTIONCALL }
+  auto task2() -> void {
+    FUNCTIONCALL
+    // TODO - alot of checks..
+  }
 
 private:
-  std::vector<T> in_; // String
-  std::vector<T> passports_;
+  std::vector<T> passports_; // String
 };
