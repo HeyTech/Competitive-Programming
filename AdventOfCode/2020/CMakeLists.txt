@@ -9,7 +9,8 @@ file(GLOB_RECURSE TASKS days/ *.h)
 SET(COMMON
         aoc/aoc.h
         aoc/aoc_string.h
-        aoc/read_input.h)
+        aoc/read_input.h
+        aoc/checks.h)
 
 add_executable(AoC2020
         main.cpp
