@@ -76,7 +76,7 @@ public:
             valid = false;
           } else if (value.length() != 7) {
             valid = false;
-          } // not done
+          }
           std::string const color{value.substr(1, value.size())};
           if (color.find_first_not_of("0123456789abcdef") !=
               std::string::npos) {
