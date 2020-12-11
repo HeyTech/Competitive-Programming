@@ -1,5 +1,7 @@
 #pragma once
 #include "aoc.h"
+#include "string"
+#include "vector"
 
 namespace aoc::read_input {
 

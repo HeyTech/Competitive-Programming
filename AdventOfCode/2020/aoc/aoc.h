@@ -1,11 +1,6 @@
 #pragma once
 
-#include <algorithm>
-#include <cstdint>
-#include <functional>
 #include <iostream>
-#include <string>
-#include <vector>
 
 namespace aoc {
 namespace macro {
