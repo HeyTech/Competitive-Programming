@@ -1,5 +1,6 @@
 #pragma once
 #include "../aoc/aoc.h"
+#include <deque>
 #include <map>
 #include <queue>
 #include <regex>
@@ -91,29 +92,25 @@ public:
 
   auto task2() -> void {
     FUNCTIONCALL
-//    std::size_t ans{};
-//    std::queue<ParentBag> que;
-//    bags_.find("shiny gold")->second.n = 1;
-//    que.push(bags_.find("shiny gold")->second);
-//
-//    while (!que.empty()) {
-//      ParentBag pb{que.front()};
-//      que.pop();
-//
-//      std::cout << pb.name << " -- ";
-//      std::for_each(pb.carry.begin(), pb.carry.end(),
-//                    [&que, this, &ans, &pb](Bag &bag) {
-//                      std::cout << bag.name;
-//                      if (bag.name != "no other") {
-//                        bags_.find(bag.name)->second.n += pb.n * bag.num;
-//                        que.push(bags_.find(bag.name)->second);
-//                      } else {
-//                        ans += pb.n;
-//                      }
-//                    });
-//      std::cout << std::endl;
-//    }
-//    ANSWER2(ans)
+    std::size_t ans{};
+    std::deque<Bag> que;
+    std::vector<Bag> shiny{bags_.find("shiny gold")->second.carry};
+    std::copy(shiny.begin(), shiny.end(), std::front_inserter(que));
+
+    while (!que.empty()) {
+      Bag bag{que.front()};
+      que.pop_front();
+      ans += bag.num;
+      if (bag.name == "no other") {
+        continue;
+      }
+
+      std::vector<Bag> bag_carry{bags_.find(bag.name)->second.carry};
+      for (int i = 0; i < bag.num; ++i) {
+        std::copy(bag_carry.begin(), bag_carry.end(), std::front_inserter(que));
+      }
+    }
+    ANSWER2(ans)
   }
 
 private:
