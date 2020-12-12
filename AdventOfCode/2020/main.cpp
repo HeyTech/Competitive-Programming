@@ -15,20 +15,20 @@
 
 int main() {
 
-    std::vector<std::string> inputs;
-    aoc::read_input::each_line(inputs);
-//  std::vector<std::string> inputs{
-//      "L.LL.LL.LL",
-//      "LLLLLLL.LL",
-//      "L.L.L..L..",
-//      "LLLL.LL.LL",
-//      "L.LL.LL.LL",
-//      "L.LLLLL.LL",
-//      "..L.L.....",
-//      "LLLLLLLLLL",
-//      "L.LLLLLL.L",
-//      "L.LLLLL.LL",
-//  };
+  std::vector<std::string> inputs;
+  aoc::read_input::each_line(inputs);
+  //  std::vector<std::string> inputs{
+  //      "L.LL.LL.LL",
+  //      "LLLLLLL.LL",
+  //      "L.L.L..L..",
+  //      "LLLL.LL.LL",
+  //      "L.LL.LL.LL",
+  //      "L.LLLLL.LL",
+  //      "..L.L.....",
+  //      "LLLLLLLLLL",
+  //      "L.LLLLLL.L",
+  //      "L.LLLLL.LL",
+  //  };
   Day11<std::string> day(inputs);
   day.task1();
   day.task2();
